@@ -13,6 +13,415 @@
     <!-- Google Font links -->
     <!-- /Google Font links -->
     <title>B-MoBot Official</title>
+    <style>
+        /* Variables */
+        
+        :root {
+            --main-color: #ab2625;
+            --main-transition: 0.3s;
+        }
+        /* /Variables */
+        /* Global Rules */
+        
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: "Tajawal", sans-serif;
+            background-color: #202225;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        strong {
+            color: var(--main-color);
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        @media (max-width: 850px) {
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        /* /Global Rules */
+        /* Components */
+        
+        .container {
+            padding-right: 25px;
+            padding-left: 25px;
+            padding-top: auto;
+            padding-bottom: auto;
+        }
+        
+        @media (max-width: 850px) {
+            .container {
+                padding: 0;
+            }
+        }
+        
+        .main-title {
+            text-align: center;
+            color: #fff;
+            width: fit-content;
+            font-size: 35px;
+            margin: 50px auto;
+        }
+        
+        @media (max-width: 850px) {
+            .main-title {
+                font-size: 25px;
+                margin: 20px auto;
+            }
+        }
+        
+        .main-title.after {
+            margin-top: 250px;
+        }
+        
+        @media (max-width: 850px) {
+            .main-title.after {
+                margin-top: 100px;
+            }
+        }
+        
+        .main-title span {
+            background-color: var(--main-color);
+            padding-right: 3px;
+            padding-left: 12px;
+        }
+        
+        .card {
+            background-color: #151515;
+            color: white;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
+            padding: 20px 30px;
+            text-align: center;
+        }
+        
+        @media (max-width: 850px) {
+            .card {
+                border-radius: 0;
+            }
+        }
+        
+        @media (max-width: 850px) {
+            .card {
+                padding: 20px 15px;
+            }
+        }
+        
+        .card .box a {
+            color: #5865f2;
+        }
+        
+        .card .box a:hover {
+            text-decoration: underline;
+        }
+        /* /Components */
+        /* Header */
+        
+        .header {
+            border-bottom: 2px solid var(--main-color);
+            padding: 5px 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        @media (max-width: 850px) {
+            .header {
+                flex-direction: column;
+            }
+        }
+        
+        .header .logo-holder img {
+            width: 60px;
+            border-radius: 50%;
+        }
+        
+        .header .navbar ul {
+            display: flex;
+            font-size: 20px;
+        }
+        
+        @media (max-width: 850px) {
+            .header .navbar ul {
+                flex-direction: column;
+                text-align: center;
+                margin-top: 15px;
+                gap: 10px;
+            }
+        }
+        
+        .header .navbar ul li a {
+            color: white;
+            padding: 0 20px 25px;
+            position: relative;
+            transition: var(--main-transition);
+        }
+        
+        .header .navbar ul li a:hover {
+            color: var(--main-color);
+        }
+        
+        @media (min-width: 851px) {
+            .header .navbar ul a::before {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 0;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 2;
+                transition: var(--main-transition);
+            }
+            .header .navbar ul a:hover::before {
+                width: 100%;
+                background-color: white;
+            }
+        }
+        
+        .header .invitation {
+            margin-right: 20px;
+            background-color: #5865f2;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: var(--main-transition);
+        }
+        
+        @media (max-width: 850px) {
+            .header .invitation {
+                margin-right: 0;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+        }
+        
+        .header .invitation:hover {
+            color: #5865f2;
+            background-color: white;
+        }
+        /* /Header */
+        /* Main Info */
+        
+        .main {
+            margin: 40px;
+            position: relative;
+        }
+        
+        @media (max-width: 850px) {
+            .main {
+                margin: 10px 0;
+            }
+        }
+        
+        .main .container .card .img-holder img {
+            border-radius: 20px;
+            max-width: 80%;
+        }
+        
+        .main .container .card .box.second {
+            margin-top: 100px;
+        }
+        
+        @media (max-width: 850px) {
+            .main .container .card .box.second {
+                margin-top: 25px;
+            }
+        }
+        /* /Main Info */
+        /* Commands */
+        
+        .commands {
+            margin: 40px;
+            position: relative;
+        }
+        
+        @media (max-width: 850px) {
+            .commands {
+                margin: 0;
+            }
+        }
+        
+        .commands .card {
+            padding: 50px;
+        }
+        
+        .commands .box {
+            text-align: left;
+        }
+        
+        .commands .card details {
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        @media (max-width: 850px) {
+            .commands .card details {
+                font-size: 16px;
+            }
+        }
+        
+        .commands .card details summary::marker {
+            color: var(--main-color);
+        }
+        
+        .commands .card details:not(:last-child) {
+            margin-bottom: 50px;
+        }
+        
+        @media (max-width: 850px) {
+            .commands .card details:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+        
+        .commands .card details ul {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid var(--main-color);
+            border-radius: 5px;
+        }
+        
+        .commands .card details ul li {
+            margin: 10px 0;
+        }
+        /* /Commands */
+        /* Rules */
+        
+        .rules {
+            margin: 40px;
+            position: relative;
+        }
+        
+        @media (max-width: 850px) {
+            .rules {
+                margin: 0;
+            }
+        }
+        
+        .rules section p {
+            text-align: left;
+            margin: 10px 20px;
+        }
+        
+        .rules .rules-ssection {
+            margin-top: 100px;
+        }
+        
+        .rules img {
+            margin-top: 20px;
+            border-radius: 20px;
+        }
+        /* /Rules */
+        /* About */
+        
+        .about {
+            margin: 40px;
+            position: relative;
+        }
+        
+        @media (max-width: 850px) {
+            .about {
+                margin: 0;
+            }
+        }
+        
+        .about .box p {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .about .img-holder {
+            margin-top: 50px;
+        }
+        
+        .about .img-holder img {
+            object-fit: cover;
+            width: 80%;
+            max-height: 300px;
+            border-radius: 20px;
+        }
+        /* /About */
+        /* Footer */
+        
+        .footer {
+            margin: 100px 0 0;
+            background-color: #151515;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+            color: white;
+        }
+        
+        @media (max-width: 850px) {
+            .footer {
+                text-align: center;
+                padding: 20px;
+            }
+        }
+        
+        .footer p {
+            font-size: 20px;
+        }
+        
+        @media (max-width: 850px) {
+            .footer p {
+                font-size: 16px;
+            }
+        }
+        
+        .footer a {
+            color: #5865f2;
+        }
+        
+        .footer span {
+            font-size: 15px;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        @media (max-width: 850px) {
+            .footer span {
+                font-size: 13px;
+                padding-bottom: 10px;
+            }
+        }
+        
+        .footer span a:hover {
+            text-decoration: underline;
+        }
+        /* /Footer */
+    </style>
 </head>
 
 <body>
